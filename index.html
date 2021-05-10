@@ -11,29 +11,36 @@
 
 <body>
     <div class="section">
-        <div class="section-card">
-            <a class="link" href="shaco.html">
-                <div class="card">
-                    <div class="picture">
-                        <img src="picture/shaco3.png">
-                    </div>
-                    <h2>Shaco</h2>
-                    <div class="info">
-                        <div class="role">
-                            <h3>Rola</h3>
-                            <p>Zabójca</p>
-                        </div>
-                        <div class="difficulty">
-                            <h3>Poziom trudności</h3>
-                            <progress class="file" value="100" max="100"> 32% </progress>
-                            <p>Wysoki</p>
-                        </div>
-
-                    </div>
-                </div>
-            </a>
+        <div id="section-card">
 
             <div class="card">
+                <div class="about">
+                    <img class="shaco-spell" src="picture/spells/spell-shaco1.png">
+                    <img class="shaco-spell" src="picture/spells/spell-shaco2.png">
+                    <img class="shaco-spell" src="picture/spells/spell-shaco3.png">
+                    <img class="shaco-spell" src="picture/spells/spell-shaco4.png">
+                    <img class="shaco-spell" src="picture/spells/spell-shaco5.png">
+                </div>
+                <div class="picture">
+                    <img src="picture/shaco3.png">
+                </div>
+                <h2>Shaco</h2>
+                <div class="info">
+                    <div class="role">
+                        <h3>Rola</h3>
+                        <p>Zabójca</p>
+                    </div>
+                    <div class="difficulty">
+                        <h3>Poziom trudności</h3>
+                        <progress class="file" value="100" max="100"> 100% </progress>
+                        <p>Wysoki</p>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="card active">
                 <div class="picture">
                     <img src="picture/Kayn.png">
                 </div>
@@ -76,6 +83,18 @@
 
         </div>
     </div>
+    <script>
+        // Add active class to the current button (highlight it)
+        var header = document.getElementById("section-card");
+        var btns = header.getElementsByClassName("card");
+        for (var i = 0; i < btns.length; i++) {
+            btns[i].addEventListener("click", function() {
+                var current = document.getElementsByClassName("active");
+                current[0].className = current[0].className.replace(" active", "");
+                this.className += " active";
+            });
+        }
+    </script>
 </body>
 
 </html>
