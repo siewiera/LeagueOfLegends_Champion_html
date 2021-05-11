@@ -79,6 +79,13 @@ body {
     box-shadow: inset 57px -22px 111px 33px #0000009e;
 }
 
+.txt {
+    position: relative;
+    display: none;
+    width: 100%;
+    height: 62%;
+}
+
 .about {
     position: relative;
     display: none;
@@ -86,22 +93,84 @@ body {
     height: 100%;
 }
 
+.active .txt {
+    transform: rotateY(180deg);
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: baseline;
+    font-size: 9px;
+    z-index: 1;
+    padding: 20px;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.65);
+    color: white;
+    margin-bottom: 37px;
+}
+
 .active .about {
     transform: rotateY(180deg);
     display: flex;
+    justify-content: center;
     color: black;
     font-size: 12px;
+    list-style-type: none;
+    z-index: 10;
 }
 
-.shaco-spell {
+.spell {
     height: 30px;
     width: 30px;
     padding: 2px;
+    border-radius: 10px;
+    transition: 0.2s linear;
 }
 
-.active:hover .shaco-spell {
+.active:hover .spell {
     height: 30px;
     width: 30px;
+    cursor: pointer;
+}
+
+.active .spell:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 0px 7px 3px rgb(0, 0, 0);
+    border: 1px solid lime;
+    transition: trnasform 0.2s linear, border 0.5s linear, box-shadow 0.2s
+}
+
+.active ul>li>ul {
+    display: none;
+}
+
+.active ul>li:hover>ul {
+    display: flex;
+    position: absolute;
+    width: 151px;
+    /* height: 87px; */
+    height: auto;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-top: 2px solid #000000c9;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 5px 10px 5px;
+    /* transition: display 2s ease-in-out, border 1s ease-in-out; */
+    box-shadow: inset 30px 7px 37px 2px #00000085;
+}
+
+.active ul>li>ul>li {
+    color: rgba(0, 0, 0, 0.55);
+    list-style-type: none;
+}
+
+.active ul>li>ul>li h3 {
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 12px;
+}
+
+.active ul>li>ul>li p {
+    font-size: 8px;
 }
 
 h2 {
@@ -134,7 +203,7 @@ h2 {
     height: 300px;
     position: absolute;
     filter: blur(2px);
-    z-index: 2;
+    z-index: 9;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -211,6 +280,7 @@ img {
 h3 {
     font-size: 18px;
     text-align: left;
+    text-transform: uppercase;
 }
 
 .info .role p,
