@@ -47,6 +47,7 @@ body {
     z-index: 1;
     box-shadow: 0px 10px 14px 6px #00000073;
     transition: filter 1s, border 1s, transform 1s, box-shadow 1s ease-in-out;
+    backdrop-filter: blur(5px);
 }
 
 .card:hover {
@@ -70,6 +71,7 @@ body {
     left: 39%;
     top: 23%;
     transition: 2s;
+    filter: brightness(100%);
     box-shadow: inset 57px -22px 111px 33px #0000009e;
 }
 
@@ -182,6 +184,7 @@ h2 {
     letter-spacing: 5px;
     width: 100px;
     height: 27px;
+    text-overflow: ellipsis;
 }
 
 .active h2 {
@@ -195,7 +198,8 @@ h2 {
     text-align: justify;
     top: -250px;
     transition: transform 1s ease-in-out;
-    color: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-transform: uppercase;
 }
 
 .picture {

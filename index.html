@@ -11,6 +11,7 @@
 
 <body>
     <div class="section">
+
         <div id="section-card">
 
             <div class="card">
@@ -72,7 +73,6 @@
                     </div>
                     <div class="difficulty">
                         <h3>Poziom trudności</h3>
-                        <progress class="file" value="100" max="100"> 100% </progress>
                         <p>Wysoki</p>
                     </div>
 
@@ -80,7 +80,7 @@
             </div>
 
 
-            <div class="card active">
+            <div class="card">
                 <div class="picture">
                     <img src="picture/Kayn.png">
                 </div>
@@ -123,7 +123,7 @@
 
         </div>
     </div>
-    <script>
+    <!-- <script>
         // Add active class to the current button (highlight it)
         var header = document.getElementById("section-card");
         var btns = header.getElementsByClassName("card");
@@ -134,7 +134,31 @@
                 this.className += " active";
             });
         }
+    </script> -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script>
+        // $(document).on('click', '.card', function() {
+        //     $(this).addClass('active').siblings().removeClass('active')
+        // })
+        // $(document).on('dblclick ', '.card', function() {
+        //     $(this).removeClass('active')
+        // })
+
+        $('.card').on('click', function(event) {
+            event.preventDefault();
+            $('.card').removeClass('active');
+            $(this).addClass('active');
+        });
+
+        $('.card').on('dblclick', function(event) {
+            event.preventDefault();
+            $('.card').removeClass('active');
+            // $(this).addClass('active');
+        });
     </script>
+    <script>
+    </script>
+    <script src="script.js"></script>
 </body>
 
 </html>
